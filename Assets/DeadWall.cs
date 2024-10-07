@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class DeadWall : MonoBehaviour
 {
+    private GameObject gameManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GameObject.Find("gameManager");
     }
 
     // Update is called once per frame
@@ -20,5 +22,6 @@ public class DeadWall : MonoBehaviour
     {
         // ƒ{[ƒ‹‚ğíœ
         Destroy(collision.gameObject);
+        gameManager.GetComponent<gameManager>().GameOver();
     }
 }
